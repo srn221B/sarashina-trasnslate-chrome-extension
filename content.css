@@ -1,0 +1,23 @@
+.sarashina-tr {
+  display: block !important;
+  margin: 0.3em 0 0 !important;
+  padding: 0 0 0 0.6em !important;
+  border-left: 3px solid #8ab4f8 !important;
+  color: inherit !important;
+  opacity: 0.85;
+  font-size: 0.95em !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-align: left !important;
+  white-space: pre-line !important;
+}
+
+.sarashina-tr.sarashina-loading {
+  opacity: 0.4;
+}
+
+.sarashina-tr.sarashina-error {
+  color: #c5221f !important;
+  border-left-color: #c5221f !important;
+  opacity: 1;
+}

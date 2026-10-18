@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 280px; margin: 0; padding: 14px; font: 13px system-ui, sans-serif; }
+    h1 { font-size: 14px; margin: 0 0 12px; }
+    label { display: block; margin-bottom: 10px; }
+    input[type="password"] { width: 100%; box-sizing: border-box; padding: 6px; margin-top: 4px; }
+    button { padding: 6px 12px; }
+    #toggle { width: 100%; padding: 8px; margin-bottom: 14px; font-weight: bold; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 4px 0 12px; }
+    #status { margin-left: 8px; color: #188038; }
+  </style>
+</head>
+<body>
+  <h1>Sarashina Translate</h1>
+  <button id="toggle" disabled>このページを翻訳</button>
+  <hr>
+  <label><input type="checkbox" id="autoTranslate"> ページを開いたら自動で翻訳する</label>
+  <label><input type="checkbox" id="showButton"> ページ右下に翻訳ボタンを表示する</label>
+  <label>API キー
+    <input type="password" id="apiKey" placeholder="SARASHINA_API_KEY" autocomplete="off">
+  </label>
+  <button id="save">保存</button><span id="status"></span>
+  <script src="popup.js"></script>
+</body>
+</html>
