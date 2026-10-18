@@ -2,10 +2,7 @@
 
 A Chrome extension that translates English text on web pages into Japanese using the [Sarashina API](https://docs.sarashina.ai/), showing the translation right below the original.
 
-```
-This is a pen
-┃ これはペンです
-```
+<img width="882" height="611" alt="Image" src="https://github.com/user-attachments/assets/b119481f-3faf-4516-98db-93c71b26b1b6" />
 
 ## Features
 
@@ -40,16 +37,6 @@ Tabs that were already open before installation need to be reloaded.
 | Move the button | Drag it |
 | Auto-translate on page load | Popup → check **ページを開いたら自動で翻訳する** (off by default) |
 | Hide the floating button | Popup → uncheck **ページ右下に翻訳ボタンを表示する** |
-
-## Rate limits
-
-The Translate API (`sarashina3-translate`) allows **6 requests per minute**, one text per request, up to **5,000 characters** each ([docs](https://docs.sarashina.ai/rate-limits)). To make the most of this, the extension:
-
-- **Batches paragraphs** — joins multiple paragraphs into a single request using numbered markers (`[[1]] … [[2]] …`) and splits the response back by marker. Any paragraph whose marker cannot be recovered is retried on its own.
-- **Throttles requests** — tracks requests over a sliding one-minute window and waits before exceeding the limit.
-- **Retries on `429`** — waits for the duration in the `Retry-After` header before retrying (up to 5 times).
-- **Prioritizes visible text** — the most recently requested paragraphs (what's on screen) are sent first.
-- **Caches results** — translations are reused until the browser is closed, so reloading a page costs no extra requests.
 
 ## Project structure
 
